@@ -1,0 +1,36 @@
+/* Jason Project
+
+This project shows how the Contract Net Protocol (CNP)
+can be implemented with Jason. It exemplifies only the
+communication no actions are actually performed.
+
+The agent c plays the initiator (cliente) (who need a service)
+and the agents p* play participant (restaurante) (who provide a service).
+The agents register their services/role in the DF (Directory Facilitator)
+
+For more information about the CNP see http://www.fipa.org/specs/fipa00029/
+
+This example also illustrates the use of the
+- mind inspector and
+- directory facilitator.
+
+Projeto baseado nos exemplos do Jason
+# Acadêmica Lara Popov Zambiasi Bazzi Oberderfer
+*/
+
+MAS restauranteLara {
+
+    infrastructure: Centralised
+
+    agents:
+        restaurante #1;     // the CNP initiator
+          //[mindinspector="gui(cycle,html,history)"];
+		  // you can store the minds on files with [mindinspector="file(cycle,xml,log)"]
+
+		cliente #200; // the participants that offer a service
+		
+        clienteRecusa;    // a participant sempre recusa
+          //[mindinspector="gui(cycle,html,history)"];
+
+        clienteN;   // a participant não responde
+}

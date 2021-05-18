@@ -1,0 +1,9 @@
+!register.
+
++!register <- .df_register("restaurante");
+              .df_subscribe("cliente").
+
+// plan to answer a CFP
++cfp(CNPId,_Service)[source(A)]
+   :   provider(A,"cliente")
+   <- .send(A,tell,refuse(CNPId)).
